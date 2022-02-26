@@ -1,0 +1,1388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.0 r1840935">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="EPIC-BONDS_23Sept-03" enabled="true">
+      <stringProp name="TestPlan.comments">This test plan was created by the BlazeMeter converter v.2.3.17. Please contact support@blazemeter.com for further support.</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="User-Agent" elementType="Header">
+            <stringProp name="Header.name">User-Agent</stringProp>
+            <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="BASE_URL_1" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_1</stringProp>
+            <stringProp name="Argument.value">qabis.epicbrokers.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL_2" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_2</stringProp>
+            <stringProp name="Argument.value">epicnonprodb2c.b2clogin.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL_3" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_3</stringProp>
+            <stringProp name="Argument.value">api.qabis.epicbrokers.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain"></stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.protocol"></stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <boolProp name="HTTPSampler.image_parser">true</boolProp>
+        <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+        <collectionProp name="DNSCacheManager.servers"/>
+        <boolProp name="DNSCacheManager.clearEachIteration">true</boolProp>
+        <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
+      </DNSCacheManager>
+      <hashTree/>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+        <collectionProp name="AuthManager.auth_list"/>
+      </AuthManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        <stringProp name="CookieManager.policy">standard-strict</stringProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+        <intProp name="maxSize">50000</intProp>
+      </CacheManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">0</stringProp>
+        <stringProp name="ThreadGroup.delay">0</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="LaunchApp" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qabis.epicbrokers.com/external" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">external</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+              <stringProp name="RandomTimer.range">0.0</stringProp>
+              <stringProp name="ConstantTimer.delay">0</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 0 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://epicnonprodb2c.b2clogin.com/epicnonprodb2c.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_BIS-External" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="p" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">p</stringProp>
+                  <stringProp name="Argument.value">B2C_1_BIS-External</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">epicnonprodb2c.onmicrosoft.com/v2.0/.well-known/openid-configuration</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://epicnonprodb2c.b2clogin.com/epicnonprodb2c.onmicrosoft.com/discovery/v2.0/keys?p=b2c_1_bis-external" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="p" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">p</stringProp>
+                  <stringProp name="Argument.value">b2c_1_bis-external</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">epicnonprodb2c.onmicrosoft.com/discovery/v2.0/keys</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="referer" elementType="Header">
+                  <stringProp name="Header.name">referer</stringProp>
+                  <stringProp name="Header.value">${last_sample_url}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="false">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">stateval</stringProp>
+              <stringProp name="RegexExtractor.regex">kid&quot;:&quot;(.+?)&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">StatevalNotfound</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script"> import org.apache.commons.codec.binary.Base64;
+var unreserved=&apos;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~&apos;;
+var size = 45;
+var id = &apos;&apos;;
+var crypto = typeof self == &apos;undefined&apos; ? null : self.crypto || self[&apos;msCrypto&apos;];
+while (0 &lt; size--) {
+id += unreserved[(Math.random() * unreserved.length) | 0];
+}
+var base64 = String(Base64.encodeBase64(&quot;id&quot;));
+// base64.replaceAll(&apos;\\)&apos;,&apos; &apos;)
+base64 = base64.replaceAll(&apos;+&apos;, &apos;-&apos;).replaceAll(&apos;\\&apos;, &apos;_&apos;).replaceAll(&apos;\\=&apos;, &apos;&apos;);
+vars.put(&quot;Value&quot;,id);
+vars.put(&apos;statevar&apos;,base64);</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="false">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script"></stringProp>
+            <stringProp name="scriptLanguage">javascript</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="stateval" elementType="Argument">
+                <stringProp name="Argument.name">stateval</stringProp>
+                <stringProp name="Argument.value">${__base64Encode(${statevar},stateEncoded)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="${statevar},${Value}" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path"></stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://epicnonprodb2c.b2clogin.com/epicnonprodb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=b2c_1_bis-external&amp;response_type=token%20id_token&amp;client_id=b8f589f9-3bed-490d-ae25-8adc95b6914a&amp;state=VDNPdktQYUJkYUxfRTA4N2FJeWd-SHVmSC1YZ3NXc1BqUllnRDQ0ZlZJUDYz&amp;redirect_uri=https%3A%2F%2Fqabis.epicbrokers.com&amp;scope=openid%20profile%20https%3A%2F%2Fepicnonprodb2c.onmicrosoft.com%2Fapi%2Fuser_impersonation&amp;nonce=VDNPdktQYUJkYUxfRTA4N2FJeWd-SHVmSC1YZ3NXc1BqUllnRDQ0ZlZJUDYz" enabled="false">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="p" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">p</stringProp>
+                  <stringProp name="Argument.value">b2c_1_bis-external</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="scope" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">scope</stringProp>
+                  <stringProp name="Argument.value">openid profile https://epicnonprodb2c.onmicrosoft.com/api/user_impersonation</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="response_type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">response_type</stringProp>
+                  <stringProp name="Argument.value">token id_token</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="state" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">state</stringProp>
+                  <stringProp name="Argument.value">${__base64Encode(${statevar},stateEncoded)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="redirect_uri" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">redirect_uri</stringProp>
+                  <stringProp name="Argument.value">https://qabis.epicbrokers.com</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="nonce" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">nonce</stringProp>
+                  <stringProp name="Argument.value">${__base64Encode(${statevar},stateEncoded)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="client_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">client_id</stringProp>
+                  <stringProp name="Argument.value">b8f589f9-3bed-490d-ae25-8adc95b6914a</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">epicnonprodb2c.onmicrosoft.com/oauth2/v2.0/authorize</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+              <stringProp name="RandomTimer.range">11556.0</stringProp>
+              <stringProp name="ConstantTimer.delay">5778</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 11556 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+              <stringProp name="RegexExtractor.refname">x-csrf-token</stringProp>
+              <stringProp name="RegexExtractor.regex">x-ms-cpim-trans=(.*?); domain=</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">CSRF_Token_Not_Found</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">StateProperties</stringProp>
+              <stringProp name="RegexExtractor.regex">StateProperties=(.+?)&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">StatePropertiesNotFound</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">pageViewId</stringProp>
+              <stringProp name="RegexExtractor.regex">pageViewId&quot;:&quot;(.+?)&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">pageViewIdNotFound</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor - extract referer" enabled="false">
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <boolProp name="resetInterpreter">true</boolProp>
+              <stringProp name="script">import org.apache.jmeter.threads;
+import org.apache.jmeter.samplers.SampleResult;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.*;
+
+SampleResult ps = ctx.getPreviousResult();
+
+lsurl = ps.getUrlAsString();
+
+Pattern path_pattern = Pattern.compile(&quot;next(.)+&quot;);
+Matcher uri_str = path_pattern.matcher(lsurl);
+boolean rez = uri_str.find();
+
+vars.put(&quot;last_sample_url&quot;,lsurl);
+
+vars.put(&quot;last_sample_path&quot;,uri_str.group());
+</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://epicnonprodb2c.b2clogin.com/static/tenant/templates/AzureBlue/idpSelector.cshtml?slice=001-000&amp;dc=MAA" enabled="false">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="slice" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">slice</stringProp>
+                  <stringProp name="Argument.value">001-000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="dc" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">dc</stringProp>
+                  <stringProp name="Argument.value">MAA</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">static/tenant/templates/AzureBlue/idpSelector.cshtml</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://epicnonprodb2c.b2clogin.com/epicnonprodb2c.onmicrosoft.com/B2C_1_BIS-External/client/perftrace?tx=StateProperties=${StateProperties}=B2C_1_BIS-External" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;navigation&quot;:{&quot;type&quot;:0,&quot;redirectCount&quot;:0},&quot;timing&quot;:{&quot;connectStart&quot;:${__time(,)},&quot;navigationStart&quot;:${__time(,)},&quot;loadEventEnd&quot;:${__time(,)},&quot;domLoading&quot;:${__time(,)},&quot;secureConnectionStart&quot;:${__time(,)},&quot;fetchStart&quot;:${__time(,)},&quot;domContentLoadedEventStart&quot;:${__time(,)},&quot;responseStart&quot;:${__time(,)},&quot;responseEnd&quot;:${__time(,)},&quot;domInteractive&quot;:${__time(,)},&quot;domainLookupEnd&quot;:${__time(,)},&quot;redirectStart&quot;:0,&quot;requestStart&quot;:${__time(,)},&quot;unloadEventEnd&quot;:0,&quot;unloadEventStart&quot;:0,&quot;domComplete&quot;:${__time(,)},&quot;domainLookupStart&quot;:${__time(,)},&quot;loadEventStart&quot;:${__time(,)},&quot;domContentLoadedEventEnd&quot;:${__time(,)},&quot;redirectEnd&quot;:0,&quot;connectEnd&quot;:${__time(,)}},&quot;entries&quot;:[{&quot;name&quot;:&quot;https://epicnonprodb2c.b2clogin.com/epicnonprodb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=b2c_1_bis-external&amp;response_type=token%20id_token&amp;client_id=b8f589f9-3bed-490d-ae25-8adc95b6914a&amp;state=${__base64Encode(${statevar},stateEncoded)}&amp;redirect_uri=https%3A%2F%2Fqabis.epicbrokers.com&amp;scope=openid%20profile%20https%3A%2F%2Fepicnonprodb2c.onmicrosoft.com%2Fapi%2Fuser_impersonation&amp;nonce=${__base64Encode(${statevar},stateEncoded)}&quot;,&quot;entryType&quot;:&quot;navigation&quot;,&quot;startTime&quot;:0,&quot;duration&quot;:3173.4449999930803,&quot;initiatorType&quot;:&quot;navigation&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:33.21999998297542,&quot;domainLookupStart&quot;:55.02500000875443,&quot;domainLookupEnd&quot;:55.02500000875443,&quot;connectStart&quot;:55.02500000875443,&quot;connectEnd&quot;:308.98999999044463,&quot;secureConnectionStart&quot;:121.64500000653788,&quot;requestStart&quot;:309.16499998420477,&quot;responseStart&quot;:1830.2799999946728,&quot;responseEnd&quot;:2948.4400000073947,&quot;transferSize&quot;:159457,&quot;encodedBodySize&quot;:156522,&quot;decodedBodySize&quot;:437614,&quot;serverTiming&quot;:[],&quot;workerTiming&quot;:[],&quot;unloadEventStart&quot;:0,&quot;unloadEventEnd&quot;:0,&quot;domInteractive&quot;:3051.7649999819696,&quot;domContentLoadedEventStart&quot;:3051.9299999868963,&quot;domContentLoadedEventEnd&quot;:3053.604999993695,&quot;domComplete&quot;:3172.3849999834783,&quot;loadEventStart&quot;:3172.549999988405,&quot;loadEventEnd&quot;:3173.4449999930803,&quot;type&quot;:&quot;navigate&quot;,&quot;redirectCount&quot;:0},{&quot;name&quot;:&quot;https://epicnonprodb2c.b2clogin.com/static/tenant/templates/AzureBlue/idpSelector.cshtml?slice=001-000&amp;dc=PNQ&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:2997.5500000000466,&quot;duration&quot;:162.42999999667518,&quot;initiatorType&quot;:&quot;xmlhttprequest&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:2997.5500000000466,&quot;domainLookupStart&quot;:2997.5500000000466,&quot;domainLookupEnd&quot;:2997.5500000000466,&quot;connectStart&quot;:2997.5500000000466,&quot;connectEnd&quot;:2997.5500000000466,&quot;secureConnectionStart&quot;:2997.5500000000466,&quot;requestStart&quot;:3006.859999994049,&quot;responseStart&quot;:3159.1949999856297,&quot;responseEnd&quot;:3159.9799999967217,&quot;transferSize&quot;:8691,&quot;encodedBodySize&quot;:8217,&quot;decodedBodySize&quot;:28275,&quot;serverTiming&quot;:[],&quot;workerTiming&quot;:[]},{&quot;name&quot;:&quot;first-paint&quot;,&quot;entryType&quot;:&quot;paint&quot;,&quot;startTime&quot;:3185.815000004368,&quot;duration&quot;:0},{&quot;name&quot;:&quot;first-contentful-paint&quot;,&quot;entryType&quot;:&quot;paint&quot;,&quot;startTime&quot;:3202.545000007376,&quot;duration&quot;:0}],&quot;connection&quot;:{&quot;onchange&quot;:null,&quot;effectiveType&quot;:&quot;3g&quot;,&quot;rtt&quot;:450,&quot;downlink&quot;:0.9,&quot;saveData&quot;:false}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">epicnonprodb2c.b2clogin.com</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">epicnonprodb2c.onmicrosoft.com/B2C_1_BIS-External/client/perftrace?tx=StateProperties=${StateProperties}&amp;p=B2C_1_BIS-External</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="false">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+                <elementProp name="X-CSRF-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">X-CSRF-TOKEN</stringProp>
+                  <stringProp name="Header.value">${x-csrf-token}</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Host" elementType="Header">
+                  <stringProp name="Header.name">Host</stringProp>
+                  <stringProp name="Header.value">epicnonprodb2c.b2clogin.com</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://epicnonprodb2c.b2clogin.com</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://epicnonprodb2c.b2clogin.com/epicnonprodb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=b2c_1_bis-external&amp;response_type=token%20id_token&amp;client_id=b8f589f9-3bed-490d-ae25-8adc95b6914a&amp;state=${__base64Encode(${statevar},stateEncoded)}&amp;redirect_uri=https%3A%2F%2Fqabis.epicbrokers.com&amp;scope=openid%20profile%20https%3A%2F%2Fepicnonprodb2c.onmicrosoft.com%2Fapi%2Fuser_impersonation&amp;nonce=${__base64Encode(${statevar},stateEncoded)}</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                  <stringProp name="Header.value">empty</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request -${last_sample_url}" enabled="false">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${last_sample_url}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+                <elementProp name="X-CSRF-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">X-CSRF-TOKEN</stringProp>
+                  <stringProp name="Header.value">${x-csrf-token}</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Login" enabled="false">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://epicnonprodb2c.b2clogin.com/epicnonprodb2c.onmicrosoft.com/B2C_1_BIS-External/SelfAsserted?tx=StateProperties=${StateProperties}&amp;p=B2C_1_BIS-External" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="p" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">p</stringProp>
+                  <stringProp name="Argument.value">B2C_1_BIS-External</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="tx" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">tx</stringProp>
+                  <stringProp name="Argument.value">StateProperties=${StateProperties}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="password" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">password</stringProp>
+                  <stringProp name="Argument.value">Test@123</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="request_type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">request_type</stringProp>
+                  <stringProp name="Argument.value">RESPONSE</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="email" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">email</stringProp>
+                  <stringProp name="Argument.value">amit.somani@epicbrokers.com</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">epicnonprodb2c.onmicrosoft.com/B2C_1_BIS-External/SelfAsserted</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://epicnonprodb2c.b2clogin.com/epicnonprodb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=b2c_1_bis-external&amp;response_type=token%20id_token&amp;client_id=b8f589f9-3bed-490d-ae25-8adc95b6914a&amp;state=${__base64Encode(${statevar},stateEncoded)}&amp;redirect_uri=https%3A%2F%2Fqabis.epicbrokers.com&amp;scope=openid%20profile%20https%3A%2F%2Fepicnonprodb2c.onmicrosoft.com%2Fapi%2Fuser_impersonation&amp;nonce=${__base64Encode(${statevar},stateEncoded)}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">X-CSRF-TOKEN</stringProp>
+                  <stringProp name="Header.value">${x-csrf-token}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://epicnonprodb2c.b2clogin.com/epicnonprodb2c.onmicrosoft.com/B2C_1_BIS-External/api/CombinedSigninAndSignup/confirmed?rememberMe=false&amp;csrf_token=Ti9SR0ZWM0c3K1VXSml5bi9scGI3K0hYZ3IrSE9OYkd0d2FQd3d3WEU5cDZvSG1YLzlGclg4S0tPTDY5RkFSRW1YZk9ER2UyOEhYbDl4a3VCazNXOWc9PTsyMDIwLTA5LTIzVDA2OjMzOjAyLjE5NDM2OTdaO3h6YjNkQ0dzanhKTGd3dldvc2p2M0E9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiI2NWE3YTQ5OC04NTE2LTRjMTktYTBjNi0zYzM2ZDYyODY4ZTMifQ&amp;p=B2C_1_BIS-External&amp;diags=%7B%22pageViewId%22%3A%227b3e5273-7b15-4ada-975d-62f3e54a4df3%22%2C%22pageId%22%3A%22CombinedSigninAndSignup%22%2C%22trace%22%3A%5B%7B%22ac%22%3A%22T005%22%2C%22acST%22%3A1600842783%2C%22acD%22%3A4%7D%2C%7B%22ac%22%3A%22T021%20-%20URL%3Ahttps%3A%2F%2Fepicnonprodb2c.b2clogin.com%2Fstatic%2Ftenant%2Ftemplates%2FAzureBlue%2FidpSelector.cshtml%3Fslice%3D001-000%26dc%3DMAA%22%2C%22acST%22%3A1600842783%2C%22acD%22%3A179%7D%2C%7B%22ac%22%3A%22T029%22%2C%22acST%22%3A1600842783%2C%22acD%22%3A18%7D%2C%7B%22ac%22%3A%22T019%22%2C%22acST%22%3A1600842783%2C%22acD%22%3A23%7D%2C%7B%22ac%22%3A%22T004%22%2C%22acST%22%3A1600842783%2C%22acD%22%3A3%7D%2C%7B%22ac%22%3A%22T003%22%2C%22acST%22%3A1600842783%2C%22acD%22%3A3%7D%2C%7B%22ac%22%3A%22T035%22%2C%22acST%22%3A1600842784%2C%22acD%22%3A0%7D%2C%7B%22ac%22%3A%22T030Online%22%2C%22acST%22%3A1600842784%2C%22acD%22%3A0%7D%2C%7B%22ac%22%3A%22T002%22%2C%22acST%22%3A1600842814%2C%22acD%22%3A0%7D%2C%7B%22ac%22%3A%22T018T010%22%2C%22acST%22%3A1600842812%2C%22acD%22%3A1911%7D%5D%7D" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="p" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">p</stringProp>
+                  <stringProp name="Argument.value">B2C_1_BIS-External</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="tx" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">tx</stringProp>
+                  <stringProp name="Argument.value">StateProperties=eyJUSUQiOiI2NWE3YTQ5OC04NTE2LTRjMTktYTBjNi0zYzM2ZDYyODY4ZTMifQ</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="csrf_token" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">csrf_token</stringProp>
+                  <stringProp name="Argument.value">${x-csrf-token}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="diags" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">diags</stringProp>
+                  <stringProp name="Argument.value">{&quot;pageViewId&quot;:&quot;${pageViewId}&quot;,&quot;pageId&quot;:&quot;CombinedSigninAndSignup&quot;,&quot;trace&quot;:[{&quot;ac&quot;:&quot;T005&quot;,&quot;acST&quot;:1600842783,&quot;acD&quot;:4},{&quot;ac&quot;:&quot;T021 - URL:https://epicnonprodb2c.b2clogin.com/static/tenant/templates/AzureBlue/idpSelector.cshtml?slice=001-000&amp;dc=MAA&quot;,&quot;acST&quot;:1600842783,&quot;acD&quot;:179},{&quot;ac&quot;:&quot;T029&quot;,&quot;acST&quot;:1600842783,&quot;acD&quot;:18},{&quot;ac&quot;:&quot;T019&quot;,&quot;acST&quot;:1600842783,&quot;acD&quot;:23},{&quot;ac&quot;:&quot;T004&quot;,&quot;acST&quot;:1600842783,&quot;acD&quot;:3},{&quot;ac&quot;:&quot;T003&quot;,&quot;acST&quot;:1600842783,&quot;acD&quot;:3},{&quot;ac&quot;:&quot;T035&quot;,&quot;acST&quot;:1600842784,&quot;acD&quot;:0},{&quot;ac&quot;:&quot;T030Online&quot;,&quot;acST&quot;:1600842784,&quot;acD&quot;:0},{&quot;ac&quot;:&quot;T002&quot;,&quot;acST&quot;:1600842814,&quot;acD&quot;:0},{&quot;ac&quot;:&quot;T018T010&quot;,&quot;acST&quot;:1600842812,&quot;acD&quot;:1911}]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="rememberMe" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">rememberMe</stringProp>
+                  <stringProp name="Argument.value">false</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">epicnonprodb2c.onmicrosoft.com/B2C_1_BIS-External/api/CombinedSigninAndSignup/confirmed</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+              <stringProp name="RandomTimer.range">34475.0</stringProp>
+              <stringProp name="ConstantTimer.delay">17237.5</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 34475 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://epicnonprodb2c.b2clogin.com/epicnonprodb2c.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_BIS-Internal" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="p" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">p</stringProp>
+                  <stringProp name="Argument.value">B2C_1_BIS-Internal</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">epicnonprodb2c.onmicrosoft.com/v2.0/.well-known/openid-configuration</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://epicnonprodb2c.b2clogin.com/epicnonprodb2c.onmicrosoft.com/discovery/v2.0/keys?p=b2c_1_bis-internal" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="p" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">p</stringProp>
+                  <stringProp name="Argument.value">b2c_1_bis-internal</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">epicnonprodb2c.onmicrosoft.com/discovery/v2.0/keys</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://api.qabis.epicbrokers.com/api/Account/getuserdetails" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_3}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/Account/getuserdetails</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsifQ.eyJpc3MiOiJodHRwczovL2VwaWNub25wcm9kYjJjLmIyY2xvZ2luLmNvbS9iN2ZiMTIwNy04NWJhLTRmMTYtYTIzOS00NWJlMzk5ZWY5MjQvdjIuMC8iLCJleHAiOjE2MDA4NDY0MTYsIm5iZiI6MTYwMDg0MjgxNiwiYXVkIjoiNDA3ZDI0ODYtNWUzYi00YTY5LTk4Y2EtNDZlZDM1MzRiNzQ4Iiwib2lkIjoiZDUxNzQzYTgtMjNiOS00YjViLThkNzgtNzE1OTliNmQ2NGVhIiwic3ViIjoiZDUxNzQzYTgtMjNiOS00YjViLThkNzgtNzE1OTliNmQ2NGVhIiwibmFtZSI6IkFtaXQgU29tYW5pIiwiZ2l2ZW5fbmFtZSI6IkFtaXQiLCJlbWFpbHMiOlsiYW1pdC5zb21hbmlAZXBpY2Jyb2tlcnMuY29tIl0sInRmcCI6IkIyQ18xX0JJUy1FeHRlcm5hbCIsIm5vbmNlIjoiVkROUGRrdFFZVUprWVV4ZlJUQTROMkZKZVdkLVNIVm1TQzFZWjNOWGMxQnFVbGxuUkRRMFpsWkpVRFl6Iiwic2NwIjoidXNlcl9pbXBlcnNvbmF0aW9uIiwiYXpwIjoiYjhmNTg5ZjktM2JlZC00OTBkLWFlMjUtOGFkYzk1YjY5MTRhIiwidmVyIjoiMS4wIiwiaWF0IjoxNjAwODQyODE2fQ.Lz43RC5dOSbZNQEtN2Dir6w4aYzQF7i3n411gqqPH_PrIZt_Rs7YHPv5gmrCpiMiBN4pZrIdWH1ZUW0JA_isv2VgiVTlxgTG6PwQ6Zt8_PgNx6iAksMefdTgM-Lm6azDsbiuQb5WplSyNX7J11nErpy6TlkursHsR4W_Ln3u7kyLoQ5HAIl6zPCG8HTEsY1x5-_w6khjNHJTeS7r5P6YAwX7Gp5I9-oGwvghGj8Tcf35jAAmn5nPP_WqvH_1qRZwq0HvZq8Jz01wPizh2mjZxjeWaGeYepi3dAjcwuTTzp1NaWVy0T8H5Tj-UP5cfmRsfkGFR_Bgw02gkSwWutk_kQ</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://api.qabis.epicbrokers.com/api/Preference/getuserpreferences/74" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_3}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/Preference/getuserpreferences/74</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsifQ.eyJpc3MiOiJodHRwczovL2VwaWNub25wcm9kYjJjLmIyY2xvZ2luLmNvbS9iN2ZiMTIwNy04NWJhLTRmMTYtYTIzOS00NWJlMzk5ZWY5MjQvdjIuMC8iLCJleHAiOjE2MDA4NDY0MTYsIm5iZiI6MTYwMDg0MjgxNiwiYXVkIjoiNDA3ZDI0ODYtNWUzYi00YTY5LTk4Y2EtNDZlZDM1MzRiNzQ4Iiwib2lkIjoiZDUxNzQzYTgtMjNiOS00YjViLThkNzgtNzE1OTliNmQ2NGVhIiwic3ViIjoiZDUxNzQzYTgtMjNiOS00YjViLThkNzgtNzE1OTliNmQ2NGVhIiwibmFtZSI6IkFtaXQgU29tYW5pIiwiZ2l2ZW5fbmFtZSI6IkFtaXQiLCJlbWFpbHMiOlsiYW1pdC5zb21hbmlAZXBpY2Jyb2tlcnMuY29tIl0sInRmcCI6IkIyQ18xX0JJUy1FeHRlcm5hbCIsIm5vbmNlIjoiVkROUGRrdFFZVUprWVV4ZlJUQTROMkZKZVdkLVNIVm1TQzFZWjNOWGMxQnFVbGxuUkRRMFpsWkpVRFl6Iiwic2NwIjoidXNlcl9pbXBlcnNvbmF0aW9uIiwiYXpwIjoiYjhmNTg5ZjktM2JlZC00OTBkLWFlMjUtOGFkYzk1YjY5MTRhIiwidmVyIjoiMS4wIiwiaWF0IjoxNjAwODQyODE2fQ.Lz43RC5dOSbZNQEtN2Dir6w4aYzQF7i3n411gqqPH_PrIZt_Rs7YHPv5gmrCpiMiBN4pZrIdWH1ZUW0JA_isv2VgiVTlxgTG6PwQ6Zt8_PgNx6iAksMefdTgM-Lm6azDsbiuQb5WplSyNX7J11nErpy6TlkursHsR4W_Ln3u7kyLoQ5HAIl6zPCG8HTEsY1x5-_w6khjNHJTeS7r5P6YAwX7Gp5I9-oGwvghGj8Tcf35jAAmn5nPP_WqvH_1qRZwq0HvZq8Jz01wPizh2mjZxjeWaGeYepi3dAjcwuTTzp1NaWVy0T8H5Tj-UP5cfmRsfkGFR_Bgw02gkSwWutk_kQ</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://api.qabis.epicbrokers.com/api/UserManagement/pendingnotification" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_3}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/UserManagement/pendingnotification</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsifQ.eyJpc3MiOiJodHRwczovL2VwaWNub25wcm9kYjJjLmIyY2xvZ2luLmNvbS9iN2ZiMTIwNy04NWJhLTRmMTYtYTIzOS00NWJlMzk5ZWY5MjQvdjIuMC8iLCJleHAiOjE2MDA4NDY0MTYsIm5iZiI6MTYwMDg0MjgxNiwiYXVkIjoiNDA3ZDI0ODYtNWUzYi00YTY5LTk4Y2EtNDZlZDM1MzRiNzQ4Iiwib2lkIjoiZDUxNzQzYTgtMjNiOS00YjViLThkNzgtNzE1OTliNmQ2NGVhIiwic3ViIjoiZDUxNzQzYTgtMjNiOS00YjViLThkNzgtNzE1OTliNmQ2NGVhIiwibmFtZSI6IkFtaXQgU29tYW5pIiwiZ2l2ZW5fbmFtZSI6IkFtaXQiLCJlbWFpbHMiOlsiYW1pdC5zb21hbmlAZXBpY2Jyb2tlcnMuY29tIl0sInRmcCI6IkIyQ18xX0JJUy1FeHRlcm5hbCIsIm5vbmNlIjoiVkROUGRrdFFZVUprWVV4ZlJUQTROMkZKZVdkLVNIVm1TQzFZWjNOWGMxQnFVbGxuUkRRMFpsWkpVRFl6Iiwic2NwIjoidXNlcl9pbXBlcnNvbmF0aW9uIiwiYXpwIjoiYjhmNTg5ZjktM2JlZC00OTBkLWFlMjUtOGFkYzk1YjY5MTRhIiwidmVyIjoiMS4wIiwiaWF0IjoxNjAwODQyODE2fQ.Lz43RC5dOSbZNQEtN2Dir6w4aYzQF7i3n411gqqPH_PrIZt_Rs7YHPv5gmrCpiMiBN4pZrIdWH1ZUW0JA_isv2VgiVTlxgTG6PwQ6Zt8_PgNx6iAksMefdTgM-Lm6azDsbiuQb5WplSyNX7J11nErpy6TlkursHsR4W_Ln3u7kyLoQ5HAIl6zPCG8HTEsY1x5-_w6khjNHJTeS7r5P6YAwX7Gp5I9-oGwvghGj8Tcf35jAAmn5nPP_WqvH_1qRZwq0HvZq8Jz01wPizh2mjZxjeWaGeYepi3dAjcwuTTzp1NaWVy0T8H5Tj-UP5cfmRsfkGFR_Bgw02gkSwWutk_kQ</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Logout" enabled="false">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://epicnonprodb2c.b2clogin.com/epicnonprodb2c.onmicrosoft.com/oauth2/v2.0/logout?p=b2c_1_bis-internal&amp;id_token_hint=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsifQ.eyJleHAiOjE2MDA4NDY0MTYsIm5iZiI6MTYwMDg0MjgxNiwidmVyIjoiMS4wIiwiaXNzIjoiaHR0cHM6Ly9lcGljbm9ucHJvZGIyYy5iMmNsb2dpbi5jb20vYjdmYjEyMDctODViYS00ZjE2LWEyMzktNDViZTM5OWVmOTI0L3YyLjAvIiwic3ViIjoiZDUxNzQzYTgtMjNiOS00YjViLThkNzgtNzE1OTliNmQ2NGVhIiwiYXVkIjoiYjhmNTg5ZjktM2JlZC00OTBkLWFlMjUtOGFkYzk1YjY5MTRhIiwibm9uY2UiOiJWRE5QZGt0UVlVSmtZVXhmUlRBNE4yRkplV2QtU0hWbVNDMVlaM05YYzFCcVVsbG5SRFEwWmxaSlVEWXoiLCJpYXQiOjE2MDA4NDI4MTYsImF1dGhfdGltZSI6MTYwMDg0MjgxNiwib2lkIjoiZDUxNzQzYTgtMjNiOS00YjViLThkNzgtNzE1OTliNmQ2NGVhIiwibmFtZSI6IkFtaXQgU29tYW5pIiwiZ2l2ZW5fbmFtZSI6IkFtaXQiLCJlbWFpbHMiOlsiYW1pdC5zb21hbmlAZXBpY2Jyb2tlcnMuY29tIl0sInRmcCI6IkIyQ18xX0JJUy1FeHRlcm5hbCIsImF0X2hhc2giOiJVMVUtZ1pINS0zNlExeXhOMGFrOFlnIn0.UGr77s4A-itdh02S5VpTkrQFQYUdam4Zc52lgsFL9GqXYF9-sJDbaZB5tKYRq43-rmZkmSnqzoC3qzASvQ0OKa34jCiSiVssuvI_aaQkGrhQ-SzztC1ak7h50oTd6W_SWCRfWvmQQWlf7B2EO-BeBrdWX1lmmdt2uIMmcPTPdyzQcZqsImqrLkLIHtlGYhUAwBXY1yEZKULRsPscZLB723_izK2y1-VNGjGQPtHpNVesF8a-rttEhUmjBKaOM5PfTBgO3CnUedU2v9GVcEYXCTprvLFSySthMGEJ9j9hfeg7cKD5z7ZVqSnhPiJPLirVNDbfy2G2ggLfxEMDmDNlXQ&amp;post_logout_redirect_uri=https://qabis.epicbrokers.com/external" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="p" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">p</stringProp>
+                  <stringProp name="Argument.value">b2c_1_bis-internal</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="id_token_hint" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">id_token_hint</stringProp>
+                  <stringProp name="Argument.value">eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsifQ.eyJleHAiOjE2MDA4NDY0MTYsIm5iZiI6MTYwMDg0MjgxNiwidmVyIjoiMS4wIiwiaXNzIjoiaHR0cHM6Ly9lcGljbm9ucHJvZGIyYy5iMmNsb2dpbi5jb20vYjdmYjEyMDctODViYS00ZjE2LWEyMzktNDViZTM5OWVmOTI0L3YyLjAvIiwic3ViIjoiZDUxNzQzYTgtMjNiOS00YjViLThkNzgtNzE1OTliNmQ2NGVhIiwiYXVkIjoiYjhmNTg5ZjktM2JlZC00OTBkLWFlMjUtOGFkYzk1YjY5MTRhIiwibm9uY2UiOiJWRE5QZGt0UVlVSmtZVXhmUlRBNE4yRkplV2QtU0hWbVNDMVlaM05YYzFCcVVsbG5SRFEwWmxaSlVEWXoiLCJpYXQiOjE2MDA4NDI4MTYsImF1dGhfdGltZSI6MTYwMDg0MjgxNiwib2lkIjoiZDUxNzQzYTgtMjNiOS00YjViLThkNzgtNzE1OTliNmQ2NGVhIiwibmFtZSI6IkFtaXQgU29tYW5pIiwiZ2l2ZW5fbmFtZSI6IkFtaXQiLCJlbWFpbHMiOlsiYW1pdC5zb21hbmlAZXBpY2Jyb2tlcnMuY29tIl0sInRmcCI6IkIyQ18xX0JJUy1FeHRlcm5hbCIsImF0X2hhc2giOiJVMVUtZ1pINS0zNlExeXhOMGFrOFlnIn0.UGr77s4A-itdh02S5VpTkrQFQYUdam4Zc52lgsFL9GqXYF9-sJDbaZB5tKYRq43-rmZkmSnqzoC3qzASvQ0OKa34jCiSiVssuvI_aaQkGrhQ-SzztC1ak7h50oTd6W_SWCRfWvmQQWlf7B2EO-BeBrdWX1lmmdt2uIMmcPTPdyzQcZqsImqrLkLIHtlGYhUAwBXY1yEZKULRsPscZLB723_izK2y1-VNGjGQPtHpNVesF8a-rttEhUmjBKaOM5PfTBgO3CnUedU2v9GVcEYXCTprvLFSySthMGEJ9j9hfeg7cKD5z7ZVqSnhPiJPLirVNDbfy2G2ggLfxEMDmDNlXQ</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="post_logout_redirect_uri" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">post_logout_redirect_uri</stringProp>
+                  <stringProp name="Argument.value">https://qabis.epicbrokers.com/external</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">epicnonprodb2c.onmicrosoft.com/oauth2/v2.0/logout</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="RandomTimer.range">28910.0</stringProp>
+              <stringProp name="ConstantTimer.delay">14455</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 28910 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qabis.epicbrokers.com/external" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">external</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="RandomTimer.range">541.0</stringProp>
+              <stringProp name="ConstantTimer.delay">270.5</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 541 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://epicnonprodb2c.b2clogin.com/epicnonprodb2c.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_BIS-External" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="p" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">p</stringProp>
+                  <stringProp name="Argument.value">B2C_1_BIS-External</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">epicnonprodb2c.onmicrosoft.com/v2.0/.well-known/openid-configuration</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://epicnonprodb2c.b2clogin.com/epicnonprodb2c.onmicrosoft.com/discovery/v2.0/keys?p=b2c_1_bis-external" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="p" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">p</stringProp>
+                  <stringProp name="Argument.value">b2c_1_bis-external</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">epicnonprodb2c.onmicrosoft.com/discovery/v2.0/keys</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://epicnonprodb2c.b2clogin.com/epicnonprodb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=b2c_1_bis-external&amp;response_type=token%20id_token&amp;client_id=b8f589f9-3bed-490d-ae25-8adc95b6914a&amp;state=ejJ2WXpkSH5QVllPWElvbG9nS0VpdGJxemYyLUJBRE1xVHVkZlYxMk9DVHcz&amp;redirect_uri=https%3A%2F%2Fqabis.epicbrokers.com&amp;scope=openid%20profile%20https%3A%2F%2Fepicnonprodb2c.onmicrosoft.com%2Fapi%2Fuser_impersonation&amp;nonce=ejJ2WXpkSH5QVllPWElvbG9nS0VpdGJxemYyLUJBRE1xVHVkZlYxMk9DVHcz" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="p" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">p</stringProp>
+                  <stringProp name="Argument.value">b2c_1_bis-external</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="scope" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">scope</stringProp>
+                  <stringProp name="Argument.value">openid profile https://epicnonprodb2c.onmicrosoft.com/api/user_impersonation</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="response_type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">response_type</stringProp>
+                  <stringProp name="Argument.value">token id_token</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="state" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">state</stringProp>
+                  <stringProp name="Argument.value">ejJ2WXpkSH5QVllPWElvbG9nS0VpdGJxemYyLUJBRE1xVHVkZlYxMk9DVHcz</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="redirect_uri" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">redirect_uri</stringProp>
+                  <stringProp name="Argument.value">https://qabis.epicbrokers.com</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="nonce" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">nonce</stringProp>
+                  <stringProp name="Argument.value">ejJ2WXpkSH5QVllPWElvbG9nS0VpdGJxemYyLUJBRE1xVHVkZlYxMk9DVHcz</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="client_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">client_id</stringProp>
+                  <stringProp name="Argument.value">b8f589f9-3bed-490d-ae25-8adc95b6914a</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">epicnonprodb2c.onmicrosoft.com/oauth2/v2.0/authorize</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="RandomTimer.range">10864.0</stringProp>
+              <stringProp name="ConstantTimer.delay">5432</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 10864 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://epicnonprodb2c.b2clogin.com/static/tenant/templates/AzureBlue/idpSelector.cshtml?slice=001-000&amp;dc=MAA" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="slice" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">slice</stringProp>
+                  <stringProp name="Argument.value">001-000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="dc" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">dc</stringProp>
+                  <stringProp name="Argument.value">MAA</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">static/tenant/templates/AzureBlue/idpSelector.cshtml</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://epicnonprodb2c.b2clogin.com/epicnonprodb2c.onmicrosoft.com/B2C_1_BIS-External/client/perftrace?tx=StateProperties=eyJUSUQiOiJlNDg3ZjFkNy1iOTRmLTQ2YzYtYWRmMi02NGMzMDFiMWZmNzkifQ&amp;p=B2C_1_BIS-External" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;navigation&quot;:{&quot;type&quot;:0,&quot;redirectCount&quot;:0},&quot;timing&quot;:{&quot;connectStart&quot;:1600842855020,&quot;navigationStart&quot;:1600842855008,&quot;loadEventEnd&quot;:1600842856694,&quot;domLoading&quot;:1600842856081,&quot;secureConnectionStart&quot;:0,&quot;fetchStart&quot;:1600842855020,&quot;domContentLoadedEventStart&quot;:1600842856627,&quot;responseStart&quot;:1600842856051,&quot;responseEnd&quot;:1600842856535,&quot;domInteractive&quot;:1600842856627,&quot;domainLookupEnd&quot;:1600842855020,&quot;redirectStart&quot;:0,&quot;requestStart&quot;:1600842855031,&quot;unloadEventEnd&quot;:0,&quot;unloadEventStart&quot;:0,&quot;domComplete&quot;:1600842856693,&quot;domainLookupStart&quot;:1600842855020,&quot;loadEventStart&quot;:1600842856693,&quot;domContentLoadedEventEnd&quot;:1600842856628,&quot;redirectEnd&quot;:0,&quot;connectEnd&quot;:1600842855020},&quot;entries&quot;:[{&quot;name&quot;:&quot;https://epicnonprodb2c.b2clogin.com/epicnonprodb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=b2c_1_bis-external&amp;response_type=token%20id_token&amp;client_id=b8f589f9-3bed-490d-ae25-8adc95b6914a&amp;state=ejJ2WXpkSH5QVllPWElvbG9nS0VpdGJxemYyLUJBRE1xVHVkZlYxMk9DVHcz&amp;redirect_uri=https%3A%2F%2Fqabis.epicbrokers.com&amp;scope=openid%20profile%20https%3A%2F%2Fepicnonprodb2c.onmicrosoft.com%2Fapi%2Fuser_impersonation&amp;nonce=ejJ2WXpkSH5QVllPWElvbG9nS0VpdGJxemYyLUJBRE1xVHVkZlYxMk9DVHcz&quot;,&quot;entryType&quot;:&quot;navigation&quot;,&quot;startTime&quot;:0,&quot;duration&quot;:1685.9850000182632,&quot;initiatorType&quot;:&quot;navigation&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:12.085000023944303,&quot;domainLookupStart&quot;:12.085000023944303,&quot;domainLookupEnd&quot;:12.085000023944303,&quot;connectStart&quot;:12.085000023944303,&quot;connectEnd&quot;:12.085000023944303,&quot;secureConnectionStart&quot;:12.085000023944303,&quot;requestStart&quot;:23.1000000203494,&quot;responseStart&quot;:1042.6450000086334,&quot;responseEnd&quot;:1526.8550000037067,&quot;transferSize&quot;:159462,&quot;encodedBodySize&quot;:156519,&quot;decodedBodySize&quot;:437614,&quot;serverTiming&quot;:[],&quot;workerTiming&quot;:[],&quot;unloadEventStart&quot;:0,&quot;unloadEventEnd&quot;:0,&quot;domInteractive&quot;:1618.929999996908,&quot;domContentLoadedEventStart&quot;:1619.040000019595,&quot;domContentLoadedEventEnd&quot;:1619.6000000054482,&quot;domComplete&quot;:1684.8699999973178,&quot;loadEventStart&quot;:1685.0400000112131,&quot;loadEventEnd&quot;:1685.9850000182632,&quot;type&quot;:&quot;navigate&quot;,&quot;redirectCount&quot;:0},{&quot;name&quot;:&quot;https://epicnonprodb2c.b2clogin.com/static/tenant/templates/AzureBlue/idpSelector.cshtml?slice=001-000&amp;dc=MAA&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:1563.5850000253413,&quot;duration&quot;:236.90999997779727,&quot;initiatorType&quot;:&quot;xmlhttprequest&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:1563.5850000253413,&quot;domainLookupStart&quot;:1563.5850000253413,&quot;domainLookupEnd&quot;:1563.5850000253413,&quot;connectStart&quot;:1563.5850000253413,&quot;connectEnd&quot;:1563.5850000253413,&quot;secureConnectionStart&quot;:1563.5850000253413,&quot;requestStart&quot;:1568.8300000037998,&quot;responseStart&quot;:1758.6799999990035,&quot;responseEnd&quot;:1800.4950000031386,&quot;transferSize&quot;:8691,&quot;encodedBodySize&quot;:8217,&quot;decodedBodySize&quot;:28275,&quot;serverTiming&quot;:[],&quot;workerTiming&quot;:[]},{&quot;name&quot;:&quot;first-paint&quot;,&quot;entryType&quot;:&quot;paint&quot;,&quot;startTime&quot;:1741.055000020424,&quot;duration&quot;:0},{&quot;name&quot;:&quot;first-contentful-paint&quot;,&quot;entryType&quot;:&quot;paint&quot;,&quot;startTime&quot;:1757.225000008475,&quot;duration&quot;:0}],&quot;connection&quot;:{&quot;onchange&quot;:null,&quot;effectiveType&quot;:&quot;3g&quot;,&quot;rtt&quot;:1100,&quot;downlink&quot;:1.1,&quot;saveData&quot;:false}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">epicnonprodb2c.onmicrosoft.com/B2C_1_BIS-External/client/perftrace?tx=StateProperties=eyJUSUQiOiJlNDg3ZjFkNy1iOTRmLTQ2YzYtYWRmMi02NGMzMDFiMWZmNzkifQ&amp;p=B2C_1_BIS-External</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+                <elementProp name="X-CSRF-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">X-CSRF-TOKEN</stringProp>
+                  <stringProp name="Header.value">WjcxdUhEVm1seGJPdEp4Y2k1RlJtbkJHNEJDUXhwc0RWV1VHMFFBK1NKemtScGM4MVhYeVN4azF0RUJ1TEpiVUorZDliVHVJMkdyaFdsbFdDOEsyV3c9PTsyMDIwLTA5LTIzVDA2OjM0OjE2LjI3NTg3MzFaOy9hZnQ0ZVJBNDNiODBHWmZOeElLN0E9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder" enabled="true">
+        <stringProp name="ProxyControlGui.port">8080</stringProp>
+        <collectionProp name="ProxyControlGui.exclude_list"/>
+        <collectionProp name="ProxyControlGui.include_list"/>
+        <boolProp name="ProxyControlGui.capture_http_headers">true</boolProp>
+        <intProp name="ProxyControlGui.grouping_mode">0</intProp>
+        <boolProp name="ProxyControlGui.add_assertion">false</boolProp>
+        <stringProp name="ProxyControlGui.sampler_type_name"></stringProp>
+        <boolProp name="ProxyControlGui.sampler_redirect_automatically">false</boolProp>
+        <boolProp name="ProxyControlGui.sampler_follow_redirects">true</boolProp>
+        <boolProp name="ProxyControlGui.use_keepalive">true</boolProp>
+        <boolProp name="ProxyControlGui.sampler_download_images">false</boolProp>
+        <intProp name="ProxyControlGui.proxy_http_sampler_naming_mode">0</intProp>
+        <stringProp name="ProxyControlGui.proxy_prefix_http_sampler_name"></stringProp>
+        <stringProp name="ProxyControlGui.proxy_pause_http_sampler"></stringProp>
+        <boolProp name="ProxyControlGui.notify_child_sl_filtered">false</boolProp>
+        <boolProp name="ProxyControlGui.regex_match">false</boolProp>
+        <stringProp name="ProxyControlGui.content_type_include"></stringProp>
+        <stringProp name="ProxyControlGui.content_type_exclude"></stringProp>
+      </ProxyControl>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
